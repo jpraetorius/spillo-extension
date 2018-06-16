@@ -6,7 +6,7 @@ This extension is inspired by [spillo-firefox-extension](https://github.com/albo
 
 ## Install
 
-Download the Extension from [the Firefox Extension Directory]()
+Download the Extension from [the Firefox Extension Directory](https://addons.mozilla.org/en-US/firefox/addon/send-to-spillo/)
 
 ## Fiddle with it
 
