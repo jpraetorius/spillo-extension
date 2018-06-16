@@ -1,0 +1,26 @@
+{
+
+  "description": "Send to Spillo Extension",
+  "manifest_version": 2,
+  "name": "send-to-spillo",
+  "version": "1.0",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/logo.svg",
+      "32": "icons/logo.svg",
+      "64": "icons/logo.svg",
+      "96": "icons/logo.svg"
+    },
+    "default_title": "Save with Spillo"
+  }
+
+}
