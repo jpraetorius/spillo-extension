@@ -1,18 +1,22 @@
 function bookmarkPage() {
-	browser.tabs.query({currentWindow: true, active: true})
-		.then(tabs => {
-			const activeTab = tabs[0];
+  browser.tabs.query({ currentWindow: true, active: true }).then(tabs => {
+    const activeTab = tabs[0];
+    const originalUrl = activeTab.url;
 
-			let url = 'spillo:///bookmark?';
-		    url += 'url' + '=' + encodeURIComponent(activeTab.url);
-		    url += '&';
-		    url += 'title' + '=' + encodeURIComponent(activeTab.title);
-		    browser.tabs.create({url})
-		    	.then(newTab => {
-		    		const tabId = newTab.id;
-		    		window.setTimeout(browser.tabs.remove(tabId), 100);
-		    	});
-		});
+    let spilloUrl = "spillo:///bookmark?";
+    spilloUrl += "url" + "=" + encodeURIComponent(activeTab.url);
+    spilloUrl += "&";
+    spilloUrl += "title" + "=" + encodeURIComponent(activeTab.title);
+
+    browser.tabs
+      .update({ loadReplace: true, url: spilloUrl })
+      .then(updatedTab => {
+        window.setTimeout(
+          browser.tabs.update({ loadReplace: true, url: originalUrl }),
+          100
+        );
+      });
+  });
 }
 
 browser.browserAction.onClicked.addListener(bookmarkPage);

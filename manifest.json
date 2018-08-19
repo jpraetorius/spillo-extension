@@ -1,13 +1,10 @@
 {
-
   "description": "Send to Spillo Extension",
   "manifest_version": 2,
   "name": "send-to-spillo",
-  "version": "1.0",
+  "version": "1.1",
 
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["activeTab"],
 
   "background": {
     "scripts": ["background.js"]
@@ -22,5 +19,4 @@
     },
     "default_title": "Save with Spillo"
   }
-
 }
