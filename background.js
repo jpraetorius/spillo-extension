@@ -9,12 +9,16 @@ function bookmarkPage() {
     spilloUrl += "title" + "=" + encodeURIComponent(activeTab.title);
 
     browser.tabs
-      .update({ loadReplace: true, url: spilloUrl })
-      .then(updatedTab => {
-        window.setTimeout(
-          browser.tabs.update({ loadReplace: true, url: originalUrl }),
-          100
-        );
+      .duplicate(activeTab.id)
+      .then(duplicatedTab => {
+        browser.tabs
+          .update({ loadReplace: true, url: spilloUrl })
+          .then(updatedTab => {
+            window.setTimeout(
+              browser.tabs.update({ loadReplace: true, url: originalUrl }),
+              100)
+          .then(browser.tabs.remove(duplicatedTab.id))
+        });
       });
   });
 }
