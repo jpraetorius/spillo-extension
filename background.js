@@ -13,8 +13,12 @@ function bookmarkPage() {
       .then(duplicatedTab => {
         browser.tabs
           .update({ loadReplace: true, url: spilloUrl })
+          .then(updatedTab => {
+            window.setTimeout(
+              browser.tabs.update({ loadReplace: true, url: originalUrl }), 100)
           .then(browser.tabs.remove(duplicatedTab.id))
-      })
+        });
+      });
   });
 }
 
