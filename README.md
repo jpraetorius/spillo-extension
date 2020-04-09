@@ -19,6 +19,10 @@ Download the Extension from [the Firefox Extension Directory](https://addons.moz
 1.  Install `web-ext` by running `npm i -g web-ext`
 2.  Run `web-ext build` in your checkout of the tool to create the .zip necessary for installation and redistribution (see [the documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/Distribution) for how to distribute properly).
 
+## Contributors
+
+- [Ed Mechem](https://github.com/edmechem) found a better way to handle the new Tab that made its way into V1.2
+
 ## License
 
 spillo-extension is free and open source software, released under the terms of the [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.html)
