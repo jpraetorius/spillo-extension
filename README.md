@@ -22,7 +22,7 @@ Download the Extension from [the Firefox Extension Directory](https://addons.moz
 ## Contributors
 
 - [Ed Mechem](https://github.com/edmechem) found a better way to handle the new Tab that made its way into V1.2
-- [Ed Mechem](https://github.com/edmechem) also kept Compat for FF75+ and updated us to the new Manifest Version
+- [Ed Mechem](https://github.com/edmechem) also kept Compatibility for FF75+
 
 ## License
 
